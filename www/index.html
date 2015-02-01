@@ -31,17 +31,49 @@
         <title>Soil Analysis</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+    
+        <!-- Start of first page -->
+        <div class="app" data-role="page" id="main">
+        
+            <div data-role="header">
+                <h1>PhoneGap</h1>
+            </div><!-- /header -->
+            
+            <div role="main" class="ui-content">
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+                <p><a class="ui-btn" href="#two">Next</a></p>
+            </div><!-- /content -->
+            
+            <div data-role="footer">
+                :)
+            </div><!-- /footer -->
+            
+        </div><!-- /page -->
+        
+        <!-- Start of second page -->
+        <div class="app" data-role="page" id="two">
+        
+            <div data-role="header">
+                <h1>Incredible</h1>
+            </div><!-- /header -->
+            
+            <div role="main" class="ui-content">
+                <p><a class="ui-btn" href="#main">Back</a></p>
+            </div><!-- /content -->
+            
+            <div data-role="footer">
+                :)
+            </div><!-- /footer -->
+            
+        </div><!-- /page -->
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
