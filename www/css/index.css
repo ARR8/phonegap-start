@@ -96,3 +96,6 @@ body {
 #selectgrid a[href*="settings"] {
     background-color: blue;
 }
+a.front {
+	width: 25%;
+}
