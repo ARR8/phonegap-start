@@ -135,8 +135,9 @@
         </script>
         <script>
             $( document ).on("mobileinit", appInitializer());
-                function appInitializer (){ 
-                    var uidb = openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
+                function appInitializer ()
+                { 
+                    var uidb = window.openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
                 }
         </script>
     </body>
