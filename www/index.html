@@ -29,12 +29,6 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Soil Analysis</title>
- <script>
-		  $ ( document ).on("mobileinit", appInitializer());
-		function appInitializer (){ 
-		  var uidb = openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
-		}  
-		  </script>
    </head>
     <body>
     
@@ -138,6 +132,12 @@
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript">
             app.initialize();
+        </script>
+        <script>
+            $ ( document ).on("mobileinit", appInitializer());
+                function appInitializer (){ 
+                    var uidb = openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
+                }
         </script>
     </body>
 </html>
