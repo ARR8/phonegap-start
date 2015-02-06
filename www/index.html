@@ -29,14 +29,28 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Soil Analysis</title>
-		<script>
-		  $ ( document ).on("mobileinit", appInitializer());
-		function appInitializer (){ 
-		  var uidb = openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
-		}  
-		  </script>
     </head>
     <body>
+    
+	<!-- Start of setup -->
+        <div class="app" data-role="page" id="analysis">
+        
+            <div data-role="header">
+                <h1>Setup</h1>
+            </div><!-- /header -->
+            
+            <div role="main" class="ui-content">
+		<div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+            </div><!-- /content -->
+            
+            <div data-role="footer">
+                <p><a href="#main">Skip</a></p><!-- TODO: Setup only once -->
+            </div><!-- /footer -->
+            
+        </div><!-- /page -->
     
         <!-- Start of first page -->
         <div class="app" data-role="page" id="main">
@@ -46,12 +60,8 @@
             </div><!-- /header -->
             
             <div role="main" class="ui-content">
-                <div id="deviceready" class="blink">
-                    <p class="event listening">Connecting to Device</p>
-                    <p class="event received">Device is Ready</p>
-                </div>
                 <div class="ui-grid-a ui-responsive" id="selectgrid">
-                    <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#view">My Field</a></div></div>
+                    <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#view">View</a></div></div>
                     <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#analysis">Analysis</a></div></div>
                     <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#help">Help</a></div></div>
                     <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#settings">Settings</a></div></div>
@@ -67,6 +77,40 @@
         
         <!-- Start of second page -->
         <div class="app" data-role="page" id="view">
+        
+            <div data-role="header">
+                <h1>Incredible</h1>
+            </div><!-- /header -->
+            
+            <div role="main" class="ui-content">
+                <p><a class="ui-btn" href="#main">Back</a></p>
+            </div><!-- /content -->
+            
+            <div data-role="footer">
+                :)
+            </div><!-- /footer -->
+            
+        </div><!-- /page -->
+        
+        <!-- Start of third page -->
+        <div class="app" data-role="page" id="analysis">
+        
+            <div data-role="header">
+                <h1>Incredible</h1>
+            </div><!-- /header -->
+            
+            <div role="main" class="ui-content">
+                <p><a class="ui-btn" href="#main">Back</a></p>
+            </div><!-- /content -->
+            
+            <div data-role="footer">
+                :)
+            </div><!-- /footer -->
+            
+        </div><!-- /page -->
+        
+        <!-- Start of fourth page -->
+        <div class="app" data-role="page" id="help">
         
             <div data-role="header">
                 <h1>Incredible</h1>
