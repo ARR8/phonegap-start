@@ -29,7 +29,13 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Soil Analysis</title>
-    </head>
+ <script>
+		  $ ( document ).on("mobileinit", appInitializer());
+		function appInitializer (){ 
+		  var uidb = openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
+		}  
+		  </script>
+   </head>
     <body>
     
 	<!-- Start of setup -->
@@ -61,8 +67,8 @@
             
             <div role="main" class="ui-content">
                 <div class="ui-grid-a ui-responsive" id="selectgrid">
-                    <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#view">View</a></div></div>
-                    <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#analysis">Analysis</a></div></div>
+                    <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#view">My Field</a></div></div>
+                    <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#analysis">Analysis History</a></div></div>
                     <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#help">Help</a></div></div>
                     <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#settings">Settings</a></div></div>
                 </div>
