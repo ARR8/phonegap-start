@@ -43,8 +43,36 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-	$( '#setup' ).show( 'fast' ); // Change from fork
+	$( '#setupbox' ).show( 'fast' ); // Change from fork
 
         console.log('Received Event: ' + id);
     }
+    
+    
 };
+
+$( '#setupnext' ).click(function()
+{
+    var setupfields = $( 'div' ).children( 'input' ); // Find all children of divs - in jQuery mobile, divs automatically wrap input fields. May have to fix for other types of fields. Returns object
+    
+    var acreageform = $( '#acreageform' ).val();
+    localforage.setItem('acreage', acreageform, function(err, value) {
+	    $( '#acreageform' ).val( value ); // This clears the field for an invalid value, which is returned as null
+    });
+    
+    var setuperror = false;
+    $.each( setupfields, function( index, value )
+    {
+	var fieldvalue = $( value ).val();
+
+	if(fieldvalue == "")
+	{
+	    setuperror = true;
+	}
+    });
+
+    if( setuperror == false )
+    {
+	$( ':mobile-pagecontainer' ).pagecontainer( 'change', '#main' ); // Same as #main
+    }
+});

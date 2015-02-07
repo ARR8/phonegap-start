@@ -12,7 +12,7 @@
     <body>
     
 	<!-- Start of setup -->
-        <div class="app" data-role="page" id="analysis">
+        <div class="app" data-role="page" id="setup">
         
             <div data-role="header">
                 <h1>Setup</h1>
@@ -23,8 +23,10 @@
                     <p class="event listening blink">Loading...</p>
                     <p class="event received">Done!</p>
                 </div>
-                <div id="setup">
-		    Test
+                <div id="setupbox"><!-- TODO: Allow user to select unit for field size and prevent negative numbers -->
+		    <label for="acreageform">How large is your field? (in acres for now)</label>
+		    <input data-clear-btn="false" name="acreageform" pattern="[0-9]*" id="acreageform" value="" type="number" class="setupform">
+		    <p><button id="setupnext">Next</button></p>
 		</div>
             </div><!-- /content -->
             
@@ -46,7 +48,7 @@
                     <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#view">My Field</a></div></div>
                     <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#analysis">Analysis History</a></div></div>
                     <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#help">Help</a></div></div>
-                    <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#settings">Settings</a></div></div>
+                    <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#setup">Settings</a></div></div>
                 </div>
 				<!-- /grid-a -->
             </div><!-- /content -->
@@ -109,18 +111,12 @@
         </div><!-- /page -->
         
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/localforage.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
-        <!--<script>
-            $( document ).on("mobileinit", appInitializer());
-                function appInitializer ()
-                { 
-                    var uidb = window.openDatabase('idb', '101.1', 'User initializing data database', 2 * 1024 *1024);
-                }
-        </script>-->
     </body>
 </html>
