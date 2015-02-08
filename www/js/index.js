@@ -27,7 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
 	document.addEventListener('deviceready', this.onDeviceReady, false);
-	document.addEventListener('pagecreate', farmnamer(), false);
+	document.addEventListener('pagecreate', farmnamer(), false); // Changed from fork
     },
     // deviceready Event Handler
     //
