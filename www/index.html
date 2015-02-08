@@ -21,7 +21,6 @@
             <div role="main" class="ui-content">
 		<div id="deviceready">
                     <p class="event listening blink">Loading...</p>
-                    <p class="event received">Done!</p>
                 </div>
                 <div id="setupbox"><!-- TODO: Allow user to select unit for field size and prevent negative numbers -->
 		    <label for="acreageform">How large is your field? (in acres for now)</label>
@@ -42,21 +41,22 @@
         <div class="app" data-role="page" id="main">
         
             <div data-role="header">
-                <h1 class="farm-name">My Farm</h1>
+                <h1 class="farm-name" />
             </div><!-- /header -->
             
             <div role="main" class="ui-content">
-                <div class="ui-grid-a ui-responsive" id="selectgrid">
+                <div  class="ui-grid-a ui-responsive" id="selectgrid">
                     <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#view">My Field</a></div></div>
                     <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#analysis">Analysis History</a></div></div>
                     <div class="ui-block-a"><div class="ui-body ui-body-d"><a class="ui-btn" href="#help">Help</a></div></div>
                     <div class="ui-block-b"><div class="ui-body ui-body-d"><a class="ui-btn" href="#setup">Settings</a></div></div>
                 </div>
+                <a class="ui-btn" style="background-color:azure" href="example/www/index.html">Bluetooth</a>
 				<!-- /grid-a -->
             </div><!-- /content -->
             
             <div data-role="footer">
-                :)
+                <p><a href="spec.html">Debug</a></p>
             </div><!-- /footer -->
             
         </div><!-- /page -->
@@ -65,7 +65,7 @@
         <div class="app" data-role="page" id="view">
         
             <div data-role="header">
-                <h1><span class="farm-name">My Farm</span> - View</h1>
+                <h1><span class="farm-name" /> - View</h1>
             </div><!-- /header -->
             
             <div role="main" class="ui-content">
@@ -82,7 +82,7 @@
         <div class="app" data-role="page" id="analysis">
         
             <div data-role="header">
-                <h1><span class="farm-name">My Farm</span> - Analysis</h1>
+                <h1><span class="farm-name" /> - Analysis</h1>
             </div><!-- /header -->
             
             <div role="main" class="ui-content">

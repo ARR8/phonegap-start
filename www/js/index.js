@@ -40,10 +40,8 @@ var app = {
     receivedEvent: function(id) {
 	var parentElement = document.getElementById(id);
 	var listeningElement = parentElement.querySelector('.listening');
-	var receivedElement = parentElement.querySelector('.received');
 	
-	listeningElement.setAttribute('style', 'display:none;');
-	receivedElement.setAttribute('style', 'display:block;');
+	$( listeningElement ).hide( 'fast' );
 	$( '#setupbox' ).show( 'fast' ); // Change from fork
 	
 	console.log('Received Event: ' + id);
@@ -90,6 +88,14 @@ function farmnamer()
 {
     localforage.getItem( 'farmname', function(err, value)
     {
-	$( '.farm-name' ).text( value );
+	console.log( value );
+	if( value == "" )
+	{
+	    $( '.farm-name' ).text( "My Farm" );
+	}
+	else if( value != "" )
+	{
+	    $( '.farm-name' ).text( value );
+	}
     });
 }
