@@ -41,6 +41,11 @@ var app = {
 	var parentElement = document.getElementById(id);
 	var listeningElement = parentElement.querySelector('.listening');
 	
+	localforage.getItem( 'soil_set_up', function( err, value )
+	{
+	    if( value == true ) { setup_exit(); }
+	});
+	
 	$( listeningElement ).hide( 'fast' );
 	$( '#setupbox' ).show( 'fast' ); // Change from fork
 	
@@ -73,16 +78,23 @@ $( '#setupnext' ).click(function()
 	if(fieldvalue == "")
 	{
 	    setuperror = true;
+	    localforage.setItem( 'soil_set_up', false );
 	}
     });
     
     if( setuperror == false )
     {
-	$( ':mobile-pagecontainer' ).pagecontainer( 'change', '#main' ); // Same as #main
+	setup_exit();
     }
     
     farmnamer();
 });
+
+function setup_exit()
+{
+    localforage.setItem( 'soil_set_up', true );
+    $( ':mobile-pagecontainer' ).pagecontainer( 'change', '#main' ); // Same as #main
+}
 
 function farmnamer()
 {
