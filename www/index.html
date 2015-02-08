@@ -25,7 +25,9 @@
                 </div>
                 <div id="setupbox"><!-- TODO: Allow user to select unit for field size and prevent negative numbers -->
 		    <label for="acreageform">How large is your field? (in acres for now)</label>
-		    <input data-clear-btn="false" name="acreageform" pattern="[0-9]*" id="acreageform" value="" type="number" class="setupform">
+		    <input data-clear-btn="false" name="acreageform" pattern="[0-9]*" id="acreageform" value="" type="number" class="requiredform">
+		    <label for="farmname">What is your farm called? <emph>(optional)</emph></label><!-- TODO: Allow only alphanumeric -->
+		    <input data-clear-btn="true" name="farmname" id="farmname" value="" type="text">
 		    <p><button id="setupnext">Next</button></p>
 		</div>
             </div><!-- /content -->
@@ -40,7 +42,7 @@
         <div class="app" data-role="page" id="main">
         
             <div data-role="header">
-                <h1>PhoneGap</h1>
+                <h1 class="farm-name">My Farm</h1>
             </div><!-- /header -->
             
             <div role="main" class="ui-content">
@@ -63,7 +65,7 @@
         <div class="app" data-role="page" id="view">
         
             <div data-role="header">
-                <h1>Incredible</h1>
+                <h1><span class="farm-name">My Farm</span> - View</h1>
             </div><!-- /header -->
             
             <div role="main" class="ui-content">
@@ -80,7 +82,7 @@
         <div class="app" data-role="page" id="analysis">
         
             <div data-role="header">
-                <h1>Incredible</h1>
+                <h1><span class="farm-name">My Farm</span> - Analysis</h1>
             </div><!-- /header -->
             
             <div role="main" class="ui-content">
@@ -97,7 +99,7 @@
         <div class="app" data-role="page" id="help">
         
             <div data-role="header">
-                <h1>Incredible</h1>
+                <h1>Help</h1>
             </div><!-- /header -->
             
             <div role="main" class="ui-content">

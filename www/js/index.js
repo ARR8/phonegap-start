@@ -19,33 +19,34 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+	this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+	document.addEventListener('deviceready', this.onDeviceReady, false);
+	document.addEventListener('pagecreate', farmnamer, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+	app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+	var parentElement = document.getElementById(id);
+	var listeningElement = parentElement.querySelector('.listening');
+	var receivedElement = parentElement.querySelector('.received');
+	
+	listeningElement.setAttribute('style', 'display:none;');
+	receivedElement.setAttribute('style', 'display:block;');
 	$( '#setupbox' ).show( 'fast' ); // Change from fork
-
-        console.log('Received Event: ' + id);
+	
+	console.log('Received Event: ' + id);
     }
     
     
@@ -54,25 +55,41 @@ var app = {
 $( '#setupnext' ).click(function()
 {
     var setupfields = $( 'div' ).children( 'input' ); // Find all children of divs - in jQuery mobile, divs automatically wrap input fields. May have to fix for other types of fields. Returns object
+    var requiredfields = $( 'div' ).children( '.requiredform' );
     
-    var acreageform = $( '#acreageform' ).val();
-    localforage.setItem('acreage', acreageform, function(err, value) {
-	    $( '#acreageform' ).val( value ); // This clears the field for an invalid value, which is returned as null
-    });
-    
-    var setuperror = false;
     $.each( setupfields, function( index, value )
     {
 	var fieldvalue = $( value ).val();
-
+	var fieldname = $( value ).attr ('name');
+	
+	localforage.setItem( fieldname, fieldvalue, function(err, valuestored) {
+	    $( value ).val( valuestored );  // This clears the field for an invalid value, which is returned as null
+	});
+    });
+    
+    var setuperror = false;
+    $.each( requiredfields, function( index, value )
+    {
+	var fieldvalue = $( value ).val();
+	
 	if(fieldvalue == "")
 	{
 	    setuperror = true;
 	}
     });
-
+    
     if( setuperror == false )
     {
 	$( ':mobile-pagecontainer' ).pagecontainer( 'change', '#main' ); // Same as #main
     }
+    
+    farmnamer();
 });
+
+function farmnamer()
+{
+    localforage.getItem( 'farmname', function(err, value)
+    {
+	$( '.farm-name' ).text( value );
+    });
+}
