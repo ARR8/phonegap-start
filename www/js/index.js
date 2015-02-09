@@ -16,6 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var setupfields = $( 'div' ).children( 'input' ); // Find all children of divs - in jQuery mobile, divs automatically wrap input fields. May have to fix for other types of fields. Returns object
+var requiredfields = $( 'div' ).children( '.requiredform' );
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -43,7 +47,20 @@ var app = {
 	
 	localforage.getItem( 'soil_set_up', function( err, value )
 	{
-	    if( value == true ) { setup_exit(); }
+	    if( value == true )
+	    {
+		setup_exit();
+		// If skipping setup, write the setting values to the fields
+		$.each( setupfields, function( index, value )
+		{
+		    var fieldname = $( value ).attr ('name');
+		    
+		    localforage.getItem( fieldname, function(err, valueretrieved)
+		    {
+			$( value ).val( valueretrieved );
+		    });
+		});
+	    }
 	});
 	
 	$( listeningElement ).hide( 'fast' );
@@ -57,8 +74,6 @@ var app = {
 
 $( '#setupnext' ).click(function()
 {
-    var setupfields = $( 'div' ).children( 'input' ); // Find all children of divs - in jQuery mobile, divs automatically wrap input fields. May have to fix for other types of fields. Returns object
-    var requiredfields = $( 'div' ).children( '.requiredform' );
     
     $.each( setupfields, function( index, value )
     {
@@ -100,7 +115,6 @@ function farmnamer()
 {
     localforage.getItem( 'farmname', function(err, value)
     {
-	console.log( value );
 	if( value == "" )
 	{
 	    $( '.farm-name' ).text( "My Farm" );
