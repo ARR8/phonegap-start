@@ -170,3 +170,11 @@ function farmnamer()
 	}
     });
 }
+
+function xmlParser( xml )
+{
+	$( xml ).find( 'Book' ).each( function ()
+	{
+		
+	}
+}
