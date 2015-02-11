@@ -105,7 +105,7 @@ $( '#setupnext' ).click(function()
     farmnamer();
 });
 
-$( '#analysisbtn' ).one( 'click', function()
+$( '#analysisbtn' ).one( 'click', function() // Runs only once, avoids loading on every click
 {
     Chart.defaults.global.responsive = true; // Charts scale to width
     
