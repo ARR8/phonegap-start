@@ -122,22 +122,22 @@ $( '#analysisbtn' ).one( 'click', function() // Runs only once, avoids loading o
 	{
 	    label: "My First dataset",
 	    fillColor: "rgba(220,220,220,0.2)",
-			  strokeColor: "rgba(220,220,220,1)",
-			  pointColor: "rgba(220,220,220,1)",
-			  pointStrokeColor: "#fff",
-			  pointHighlightFill: "#fff",
-			  pointHighlightStroke: "rgba(220,220,220,1)",
-			  data: [65, 59, 80, 81, 56, 55, 40]
+			 strokeColor: "rgba(220,220,220,1)",
+			 pointColor: "rgba(220,220,220,1)",
+			 pointStrokeColor: "#fff",
+			 pointHighlightFill: "#fff",
+			 pointHighlightStroke: "rgba(220,220,220,1)",
+			 data: [65, 59, 80, 81, 56, 55, 40]
 	},
 	{
 	    label: "My Second dataset",
 	    fillColor: "rgba(151,187,205,0.2)",
-			  strokeColor: "rgba(151,187,205,1)",
-			  pointColor: "rgba(151,187,205,1)",
-			  pointStrokeColor: "#fff",
-			  pointHighlightFill: "#fff",
-			  pointHighlightStroke: "rgba(151,187,205,1)",
-			  data: [28, 48, 40, 19, 86, 27, 90]
+			 strokeColor: "rgba(151,187,205,1)",
+			 pointColor: "rgba(151,187,205,1)",
+			 pointStrokeColor: "#fff",
+			 pointHighlightFill: "#fff",
+			 pointHighlightStroke: "rgba(151,187,205,1)",
+			 data: [28, 48, 40, 19, 86, 27, 90]
 	}
 	]
     };
@@ -147,7 +147,7 @@ $( '#analysisbtn' ).one( 'click', function() // Runs only once, avoids loading o
     $( canvas ).parent().css( "padding", "0" );
     
     new Chart(ctx).Line(data, options);
-
+    
 });
 
 function setup_exit()
@@ -171,20 +171,21 @@ function farmnamer()
     });
 }
 
-function callxmlparser () {
-    $.ajax({
-        type: "GET",
-        url: "CropNutrientContents-YieldUnitChanges-Oct-03.xml",
-        dataType: "xml",
-        success: xmlParser
-    });
-});
-
-
-function xmlParser( xml )
+$( '#fieldbtn' ).one( 'click', function()
 {
-	$( xml ).find( 'Crop' ).each( function ()
-	{
-		$( '#addcrop' ).append( '<li><a href="#">' + $(this).find( 'Crop' ).text() + '</a></li>');
-	}
-}
+    $.ajax
+	({
+		type: "GET",
+		url: "CropNutrientContents-YieldUnitChanges-Oct-03.xml",
+		dataType: "xml",
+		success:
+		function( xml )
+		{
+		    console.log ('success');
+		    $( xml ).find( 'Crop' ).each( function( index, element )
+			{
+			    $( '#addcrop' ).append( '<li class="ui-li-static ui-body-inherit ui-screen-hidden" >' + $( element ).text() + '</li>');
+			});
+		},
+	});
+});
