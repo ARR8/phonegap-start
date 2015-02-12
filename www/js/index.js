@@ -171,10 +171,20 @@ function farmnamer()
     });
 }
 
+function callxmlparser () {
+    $.ajax({
+        type: "GET",
+        url: "CropNutrientContents-YieldUnitChanges-Oct-03.xml",
+        dataType: "xml",
+        success: xmlParser
+    });
+});
+
+
 function xmlParser( xml )
 {
-	$( xml ).find( 'Book' ).each( function ()
+	$( xml ).find( 'Crop' ).each( function ()
 	{
-		
+		$( '#addcrop' ).append( '<li><a href="#">' + $(this).find( 'Crop' ).text() + '</a></li>');
 	}
 }

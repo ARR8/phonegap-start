@@ -70,7 +70,7 @@ body {
     display: none;
 }
 
-#selectgrid a[href*="view"] {
+#selectgrid a[href*="field"] {
     background-color: purple;
 }
 
