@@ -181,7 +181,6 @@ $( '#fieldbtn' ).one( 'click', function()
 		success:
 		function( xml )
 		{
-		    console.log ('success');
 		    $( xml ).find( 'Crop' ).each( function( index, element )
 			{
 			    $( '#addcrop' ).append( '<li class="ui-li-static ui-body-inherit ui-screen-hidden" >' + $( element ).text() + '</li>');
