@@ -189,7 +189,7 @@ $( '#fieldbtn' ).one( 'click', function()
 	});
 });
 
-$( '.listed-crop' ).click(function()
+$( '.listed-crop' ).click(function checker()
 {
 	$( '.listed-crop' ).addClass( 'ui-btn-icon-right ui-icon-check' ).attr( 'data-icon', 'check' );
 });
