@@ -183,13 +183,18 @@ $( '#fieldbtn' ).one( 'click', function()
 		{
 		    $( xml ).find( 'Crop' ).each( function( index, element )
 			{
-			    $( '#addcrop' ).append( '<li class="listed-crop ui-li-static ui-body-inherit ui-screen-hidden" id="' + $( element ).text() + '">' + $( element ).text() + '</li>'); // Uses name of crop as id and text contents
+			    $( '#addcrop' ).append
+			    (
+				'<li class="ui-screen-hidden ui-btn ui-btn-icon-right ui-icon-plus">'
+					+ $( element ).text() +
+				'</li>'
+			    ); // Uses name of crop as text contents
 			});
 		},
 	});
 });
 
-$( '.listed-crop' ).click(function checker()
+$( '#addcrop' ).on( 'click', 'li', function()
 {
-	$( '.listed-crop' ).addClass( 'ui-btn-icon-right ui-icon-check' ).attr( 'data-icon', 'check' );
+	$( this ).toggleClass( 'ui-icon-plus ui-icon-check' );
 });
