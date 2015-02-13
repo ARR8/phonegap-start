@@ -183,7 +183,7 @@ $( '#fieldbtn' ).one( 'click', function()
 		{
 		    $( xml ).find( 'Crop' ).each( function( index, element )
 			{
-			    $( '#addcrop' ).append( '<li class="ui-li-static ui-body-inherit ui-screen-hidden" >' + $( element ).text() + '</li>');
+			    $( '#addcrop' ).append( '<li class="ui-li-static ui-body-inherit ui-screen-hidden" id="' + $( element ).text() + '">' + $( element ).text() + '</li>'); // Uses name of crop as id and text contents
 			});
 		},
 	});
