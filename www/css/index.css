@@ -85,3 +85,8 @@ body {
 #selectgrid a[href*="settings"] {
     background-color: blue;
 }
+
+.controlgroup-textinput{
+    padding-top:.22em;
+    padding-bottom:.22em;
+}
