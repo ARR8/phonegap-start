@@ -80,7 +80,7 @@
 		</ul>
 		
 		<label for="cropname">Crop name</label>
-		<input name="cropname" id="cropname" value="" type="text">
+		<input name="cropname" id="cropname" value="" required type="text">
 		
 		<label for="cropunit" class="select">Crop unit</label>
 		<select name="cropunit" id="cropunit">
@@ -107,13 +107,15 @@
 		</select>
 		
 		<label for="n">Nitrogen (N) needed</label>
-		<input name="n" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="n" value="" type="number">
+		<input class="customcropfield" name="n" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="n" value="" type="number">
 		
 		<label for="p">Phosphorous (P) needed</label>
-		<input name="p" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="p" value="" type="number">
+		<input class="customcropfield" name="p" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="p" value="" type="number">
 		
 		<label for="k">Potassium (K) needed</label>
-		<input name="k" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="k" value="" type="number">
+		<input class="customcropfield" name="k" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="k" value="" type="number">
+		
+		<p><a class="ui-btn" nohref id="submitcustomcrop">Add</a></p>
 		
 		<p><a class="ui-btn" href="#main">Back</a></p>
 	    </div><!-- /content -->

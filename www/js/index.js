@@ -198,3 +198,16 @@ $( '#addcrop' ).on( 'click', 'li', function()
 {
 	$( this ).toggleClass( 'ui-icon-plus ui-icon-check' );
 });
+
+$( '.customcropfield' ).change(function()
+{
+	// @TODO: Add validation function here
+});
+
+$( '#submitcustomcrop' ).click(function()
+{
+	cropname = ( '#cropname' ).val();
+	// @TODO: Add check for at least one nutrient
+	
+	//if( cropname != null && )
+})
