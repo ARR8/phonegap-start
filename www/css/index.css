@@ -71,19 +71,19 @@ body {
 }
 
 #selectgrid a[href*="field"] {
-    background-color: purple;
+    background-color: #F0FFFF;
 }
 
 #selectgrid a[href*="analysis"] {
-    background-color: green;
+    background-color: #F0FFFF;
 }
 
 #selectgrid a[href*="help"] {
-    background-color: yellow;
+    background-color: #F0FFFF;
 }
 
-#selectgrid a[href*="settings"] {
-    background-color: blue;
+#selectgrid a[href*="#setup"] {
+    background-color: #F0FFFF;
 }
 
 .controlgroup-textinput{
