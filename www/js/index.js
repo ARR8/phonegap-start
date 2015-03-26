@@ -162,7 +162,7 @@ function farmnamer()
     {
 	if( value == "" )
 	{
-	    $( '.farm-name' ).text( "My Farm" );
+	    $( '.farm-name' ).text( "Farm" );
 	}
 	else if( value != "" )
 	{
@@ -194,6 +194,8 @@ $( '#fieldbtn' ).one( 'click', function()
 	});
 });
 
+var selectedcrops;
+
 $( '#addcrop' ).on( 'click', 'li', function()
 {    
 	submitbutton = '#submitcroplist';
@@ -208,6 +210,14 @@ $( '#addcrop' ).on( 'click', 'li', function()
 	{
 	    $( submitbutton ).hide();
 	}
+});
+
+$(  '#submitcroplist' ).click(function()
+{
+    $.each( selectedcrops, function( index, value )
+    {
+	console.log( value );
+    });
 });
 
 $( '.customcropfield' ).change(function()
