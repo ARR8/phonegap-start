@@ -65,10 +65,7 @@ var app = {
 	
 	$( listeningElement ).hide( 'fast' );
 	$( '#setupbox' ).show( 'fast' ); // Change from fork
-	setTimeout( function() 
-  {
-	  $( '#theWelcomePopup' ).popup( 'open' );
-  }, 500);
+	
 	console.log('Received Event: ' + id);
     }
     
