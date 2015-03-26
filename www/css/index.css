@@ -70,20 +70,9 @@ body {
     display: none;
 }
 
-#selectgrid a[href*="field"] {
-    background-color: purple;
-}
-
-#selectgrid a[href*="analysis"] {
-    background-color: green;
-}
-
-#selectgrid a[href*="help"] {
-    background-color: yellow;
-}
-
-#selectgrid a[href*="settings"] {
-    background-color: blue;
+#selectgrid a
+{
+    background-color: azure;
 }
 
 .controlgroup-textinput{
