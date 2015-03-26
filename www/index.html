@@ -79,6 +79,11 @@
 		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-input="#autocomplete-input" data-inset="true" data-autodividers="true" id="addcrop">
 		</ul>
 		
+		<p><a class="ui-btn" nohref id="submitcroplist" style="display:none">Add crop(s)</a></p>
+		
+		<div data-role="collapsible">
+		<h3>Add custom crop</h3>
+		
 		<label for="cropname">Crop name</label>
 		<input name="cropname" id="cropname" value="" required type="text">
 		
@@ -116,6 +121,8 @@
 		<input class="customcropfield" name="k" pattern="[0-9]+([,\.][0-9]+)?" step="any" min="0" id="k" value="" type="number">
 		
 		<p><a class="ui-btn" nohref id="submitcustomcrop">Add</a></p>
+		
+		</div>
 		
 		<p><a class="ui-btn" href="#main">Back</a></p>
 	    </div><!-- /content -->

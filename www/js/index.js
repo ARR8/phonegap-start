@@ -195,8 +195,19 @@ $( '#fieldbtn' ).one( 'click', function()
 });
 
 $( '#addcrop' ).on( 'click', 'li', function()
-{
+{    
+	submitbutton = '#submitcroplist';
+    
 	$( this ).toggleClass( 'ui-icon-plus ui-icon-check' );
+	selectedcrops = $( '#addcrop > .ui-icon-check' );
+	if( selectedcrops.length > 0 )
+	{
+	    $( submitbutton ).show();
+	}
+	else if( selectedcrops.length < 1 )
+	{
+	    $( submitbutton ).hide();
+	}
 });
 
 $( '.customcropfield' ).change(function()
